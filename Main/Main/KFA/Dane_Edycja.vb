@@ -66,8 +66,10 @@ Public Class Dane_Edycja
         Dim MyConnection As System.Data.OleDb.OleDbConnection
         Dim DtSet As System.Data.DataSet
         Dim MyCommand As System.Data.OleDb.OleDbDataAdapter
-        MyConnection = New System.Data.OleDb.OleDbConnection("provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\Users\tomczak\Desktop\testery\Stanowisko_KFA_wizualizacja\Testery.xlsx';Extended Properties=Excel 8.0;") 'ciag polaczenie (zalezne od drivera na maszynie)
-        MyCommand = New System.Data.OleDb.OleDbDataAdapter("select * from [Arkusz1$]", MyConnection)   'uruchom zapytanie SQL
+        'ciag polaczenie (zalezne od drivera na maszynie)
+        MyConnection = New System.Data.OleDb.OleDbConnection("provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\Users\tomczak\Desktop\testery\Stanowisko_KFA_wizualizacja\Testery.xlsx';Extended Properties=Excel 8.0;") 
+        'uruchom zapytanie SQL
+        MyCommand = New System.Data.OleDb.OleDbDataAdapter("select * from [Arkusz1$]", MyConnection)   
         MyCommand.TableMappings.Add("Table", "Net-informations.com")
         DtSet = New System.Data.DataSet
         MyCommand.Fill(DtSet)
