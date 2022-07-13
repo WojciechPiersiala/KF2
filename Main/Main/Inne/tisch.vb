@@ -13,7 +13,7 @@ Public Class tisch
     Private tcClient As TcAdsClient 'Klient ADS / Obiekt komunikacyjny ADS.
     Private hConnect() As Integer   'uchwyt obslugi polaczenia
     Private dataStream As AdsStream 'udestepnia dostep do podstawowego strumienia BinaryReader 
-    Private binRead As BinaryReader
+    Private binRead As BinaryReader 'odczytuje zarówno podstawowe typy danych, jak i typy danych PLC jako wartości binarne.
     Private bIsReading As Boolean = False 'flaga procesu
     Private bHasRead As Boolean = False   'powiadomienie o ukonczeniu pobierania
     Private iMaxValues As Integer = 4
@@ -26,7 +26,7 @@ Public Class tisch
     Private hSwitchNotify4 As Integer
     Private hSwitchNotify5 As Integer
 
-    Private Y38 As Integer
+    Private Y38 As Integer    'Zmienne w PLC
     Private X32 As Integer
     Private X31_1 As Integer
     Private X32_1 As Integer
@@ -34,6 +34,11 @@ Public Class tisch
 
 
 
+    ''' <summary>
+    ''' Placz sie z PLC (przycisk dziala jak SR)
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Public Sub Przewody_8_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         'deklaracja ikonek
@@ -44,7 +49,7 @@ Public Class tisch
 
         If bIsReading Then   'jezeli dane sa zczytywane
             Try
-                tcClient.Dispose()
+                tcClient.Dispose() 'zakoncz polaczenie
             Catch err As Exception
                 MessageBox.Show(err.Message)
             End Try
@@ -68,7 +73,20 @@ Public Class tisch
             ReDim hConnect(4)
 
             Try
-                hConnect(1) = tcClient.AddDeviceNotification(checkVariable(MaskedTextBox1.Text.ToString, MaskedTextBox1), dataStream, 0, 1, AdsTransMode.OnChange, 100, 0, Nothing) 'uzyskaj uchwyt zmiennej ADS.
+            
+            ''' <summary>
+            '''Łączy zmienną z klientem ADS. Klient ADS zostanie powiadomiony o zdarzeniu AdsNotification.
+            ''' </summary>
+            ''' <param name="variableName"></param>
+            ''' <param name="dataStream"></param>
+            ''' <param name="transMode"></param>
+            ''' <param name="cycleTime"></param>
+            ''' <param name="maxDelay"></param>
+            ''' <param name="userData"></param>
+            '''<returns>
+            '''Zwraca usyskany uchwyt zmiennej ADS. (Uchwyt powiadomienia)
+            '''</returns>
+                hConnect(1) = tcClient.AddDeviceNotification(checkVariable(MaskedTextBox1.Text.ToString, MaskedTextBox1), dataStream, 0, 1, AdsTransMode.OnChange, 100, 0, Nothing) 
                 hConnect(2) = tcClient.AddDeviceNotification(checkVariable(MaskedTextBox2.Text.ToString, MaskedTextBox2), dataStream, 1, 1, AdsTransMode.OnChange, 100, 0, Nothing)
                 hConnect(3) = tcClient.AddDeviceNotification(checkVariable(MaskedTextBox3.Text.ToString, MaskedTextBox3), dataStream, 2, 1, AdsTransMode.OnChange, 100, 0, Nothing)
                 hConnect(4) = tcClient.AddDeviceNotification(checkVariable(MaskedTextBox4.Text.ToString, MaskedTextBox4), dataStream, 3, 1, AdsTransMode.OnChange, 100, 0, Nothing)

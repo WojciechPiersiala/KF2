@@ -10,15 +10,16 @@ Public Class Przewody_10749697
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private tcClient As TcAdsClient
-    Private hConnect() As Integer
-    Private dataStream As AdsStream
-    Private binRead As BinaryReader
-    Private bIsReading As Boolean = False
-    Private bHasRead As Boolean = False
+    Private tcClient As TcAdsClient                         'Klient ADS / Obiekt komunikacyjny ADS.
+    Private hConnect() As Integer                           'uchwyt obslugi polaczenia
+    Private dataStream As AdsStream                         'udestepnia dostep do podstawowego strumienia BinaryReader 
+    Private binRead As BinaryReader                         'odczytuje zarówno podstawowe typy danych, jak i typy danych PLC jako wartości binarne.
+    Private bIsReading As Boolean = False flaga procesu
+    Private bHasRead As Boolean = False '                   'powiadomienie o ukonczeniu pobierania
     Private iMaxValues As Integer = 25
-    Private aPicBoxes(0 To iMaxValues) As PictureBox
+    Private aPicBoxes(0 To iMaxValues) As PictureBox        'ikonki
     Private binReader As System.IO.BinaryReader
+
 
     Private hSwitchNotify As Integer
     Private hSwitchNotify2 As Integer
@@ -75,8 +76,14 @@ Public Class Przewody_10749697
     Private Przewod_25_In_WIZ As Integer
 
 
-    Public Sub Przewody_7_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load      'wczytaj ikonki
+    ''' <summary>
+    ''' Placz sie z PLC (przycisk dziala jak SR)
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Public Sub Przewody_7_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load      
 
+        'wczytaj ikonki
         aPicBoxes(1) = PictureBox1
         aPicBoxes(2) = PictureBox2
         aPicBoxes(3) = PictureBox3
@@ -141,9 +148,9 @@ Public Class Przewody_10749697
             bIsReading = False
 
         Else
-            Dim dataStream As New AdsStream(31)
+            Dim dataStream As New AdsStream(31) 'Inicjuje nowe wystąpienie klasy AdsStream. Instancja ma pojemność rozszerzalną zainicjowaną na zero, Udostępnia dostęp do podstawowego strumienia BinaryReader.
             binRead = New BinaryReader(dataStream, System.Text.Encoding.ASCII)
-            tcClient = New TwinCAT.Ads.TcAdsClient()
+            tcClient = New TwinCAT.Ads.TcAdsClient() 'Nawiązuje połączenie z urządzeniem ADS.
             tcClient.Connect(801)
 
             ReDim hConnect(25)
@@ -151,6 +158,18 @@ Public Class Przewody_10749697
 
 
             Try
+            ''' <summary>
+            '''Łączy zmienną z klientem ADS. Klient ADS zostanie powiadomiony o zdarzeniu AdsNotification.
+            ''' </summary>
+            ''' <param name="variableName"></param>
+            ''' <param name="dataStream"></param>
+            ''' <param name="transMode"></param>
+            ''' <param name="cycleTime"></param>
+            ''' <param name="maxDelay"></param>
+            ''' <param name="userData"></param>
+            '''<returns>
+            '''Zwraca usyskany uchwyt zmiennej ADS. (Uchwyt powiadomienia)
+            '''</returns>
                 hConnect(1) = tcClient.AddDeviceNotification(checkVariable(MaskedTextBox1.Text.ToString, MaskedTextBox1), dataStream, 0, 1, AdsTransMode.OnChange, 100, 0, Nothing)
                 hConnect(2) = tcClient.AddDeviceNotification(checkVariable(MaskedTextBox2.Text.ToString, MaskedTextBox2), dataStream, 1, 1, AdsTransMode.OnChange, 100, 0, Nothing)
                 hConnect(3) = tcClient.AddDeviceNotification(checkVariable(MaskedTextBox3.Text.ToString, MaskedTextBox3), dataStream, 2, 1, AdsTransMode.OnChange, 100, 0, Nothing)
@@ -177,8 +196,9 @@ Public Class Przewody_10749697
                 hConnect(24) = tcClient.AddDeviceNotification(checkVariable(MaskedTextBox24.Text.ToString, MaskedTextBox24), dataStream, 23, 1, AdsTransMode.OnChange, 100, 0, Nothing)
                 hConnect(25) = tcClient.AddDeviceNotification(checkVariable(MaskedTextBox25.Text.ToString, MaskedTextBox25), dataStream, 24, 1, AdsTransMode.OnChange, 100, 0, Nothing)
 
-
+                'Łączy zmienną z klientem ADS. Klient ADS zostanie powiadomiony o zdarzeniu AdsNotification.'''
                 hSwitchNotify = tcClient.AddDeviceNotification(".wybor_kable", dataStream, 25, 1, AdsTransMode.OnChange, 100, 0, DBNull.Value)
+                'Generuje unikalny uchwyt dla zmiennej ADS.
                 wybor_kable = tcClient.CreateVariableHandle(".wybor_kable")
 
                 hSwitchNotify2 = tcClient.AddDeviceNotification(".Przewod_1_In_WIZ", dataStream, 26, 1, AdsTransMode.OnChange, 100, 0, DBNull.Value)
@@ -256,7 +276,7 @@ Public Class Przewody_10749697
                 hSwitchNotify26 = tcClient.AddDeviceNotification(".Przewod_25_In_WIZ", dataStream, 27, 1, AdsTransMode.OnChange, 100, 0, DBNull.Value)
                 Przewod_25_In_WIZ = tcClient.CreateVariableHandle(".Przewod_25_In_WIZ")
 
-                AddHandler tcClient.AdsNotification, AddressOf OnNotification     'dodaj funkcje powiadomienia do polaczenia ADS
+                AddHandler tcClient.AdsNotification, AddressOf OnNotification     'Przydziel obsluge zdarzenia  tcClient.AdsNotification do funkcji OnNotification
                 Button3.Text = "Offline"
                 Button3.BackColor = Color.Red
                 bHasRead = True
@@ -289,6 +309,12 @@ Public Class Przewody_10749697
         End Try
     End Sub
 
+
+    ''' <summary>
+    ''' Obsluga zdarzenia wywolane przez wykonanie polaczenia z PLC. ( wizualne potwierdzenie rozpoczecia procesu )
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Function checkVariable(sString As String, mtb As MaskedTextBox) As String 'sprawdz pozycje
         Dim stelle As Integer
         stelle = InStr(sString, ".")

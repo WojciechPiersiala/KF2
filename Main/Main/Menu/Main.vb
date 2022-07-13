@@ -2,11 +2,20 @@
 Imports TwinCAT.Ads
 Imports System.Deployment.Application
 
+''' <summary>
+''' Okno glownego menu
+''' </summary>
+Public Class Agregaty_Me
 Public Class Main
 
     Public poziomdostepu As Boolean     'uzywane w Novimat
     Private version As String           'aktualna wersja programu 
 
+    ''' <summary>
+    '''Pokaz dostepne opcje w polu wyboru
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load  'counstructor
         Log_Out.Visible = False
         ComboBox1.Items.Add("KFA")
@@ -17,7 +26,7 @@ Public Class Main
         TextBox1.Visible = False
 
         If (ApplicationDeployment.IsNetworkDeployed) Then                                 'nowa wersia 
-            Dim AD As ApplicationDeployment = ApplicationDeployment.CurrentDeployment
+            Dim AD As ApplicationDeployment = ApplicationDeployment.CurrentDeployment     'wyswietl informacje o obecnej wersji
             Label1.Text = "v " & AD.CurrentVersion.ToString
         Else
 
@@ -25,7 +34,7 @@ Public Class Main
         End If
 
     End Sub
-
+    'zaloguj sie w trybie admina
     Private Sub adminhaslo(sender As Object, e As EventArgs) Handles ComboBox1.SelectedValueChanged 'Textbox zeby wpisac haslo
         If ComboBox1.SelectedItem Is "Admin" Then
             TextBox1.Visible = True
@@ -33,7 +42,12 @@ Public Class Main
             TextBox1.Visible = False
         End If
     End Sub
-
+    
+    ''' <summary>
+    '''Przyciski aktywacji kolejnych oken
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub Button_Click(sender As Object, e As EventArgs) Handles Button1.Click, Button3.Click, Button3.Click, Button4.Click, Button5.Click, Button6.Click, Button7.Click, Button8.Click, Button9.Click, Button10.Click
         If sender.Equals(Button1) Then
             Application.Exit()   'wylacz aplikacje
@@ -157,7 +171,7 @@ Public Class Main
             MessageBox.Show(" :( ")            'Haslo niepoprawne
         End If
     End Sub
-    Private Sub Log_Out_Click(sender As Object, e As EventArgs) Handles Log_Out.Click           'wyloguj sie, powrot 
+    Private Sub Log_Out_Click(sender As Object, e As EventArgs) Handles Log_Out.Click           'wyloguj sie, powrot do poprzedniego okna
         PictureBox1.Visible = True
         Log_In.Visible = True
         Log_Out.Visible = False
