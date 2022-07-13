@@ -1,0 +1,111 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Main
+</name>
+</assembly>
+<members>
+<member name="T:Main.My.Resources.Resource1">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Main.My.Resources.Resource1.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Main.My.Resources.Resource1.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Main.My.Resources.Resource1.C__Users_tomczak_Desktop_vizualizacja_Visu_DLT__NET_Resources_ErrorA128U_png">
+<summary>
+  Looks up a localized string similar to .
+</summary>
+</member>
+<member name="T:Main.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Main.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Main.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Main.My.Resources.Resources.Image1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Main.My.Resources.Resources.Image2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Main.My.Resources.Resources.Image3">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Main.My.Resources.Resources.Linia_pion">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Main.My.Resources.Resources.linia_poziom">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:Main.Agregaty_Menu">
+ <summary>
+ Wybierz kategorie, zalezne od menu glownego
+ </summary>
+</member>
+<member name="M:Main.tisch.OnNotification(System.Object,TwinCAT.Ads.AdsNotificationEventArgs)">
+ <summary>
+ Obsluga zdarzenia wywolane przez wykonanie polaczenia z PLC. ( wizualne potwierdzenie rozpoczecia procesu )
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Main.tisch.checkVariable(System.String,System.Windows.Forms.MaskedTextBox)">
+ <summary>
+ Sprawdz zmienna, 
+ </summary>
+ <param name="sString"></param>
+ <param name="mtb"></param>
+ <returns></returns>
+</member>
+<member name="M:Main.tisch.Przewod1_Down(System.Object,System.EventArgs)">
+ <summary>
+ publikacja danych do PLC, w zaleznosci od przycisku, wyslij odpowiednie dane, modyfikacja zmiennej w PLC. 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="T:Main.KFA_Main">
+ <summary>
+ nowe okno zalezne od glownego menu
+ </summary>
+</member>
+<member name="M:Main.KFA_Main.Button3_Click(System.Object,System.EventArgs)">
+ <summary>
+  Wybierz kategorie
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+</members>
+</doc>
