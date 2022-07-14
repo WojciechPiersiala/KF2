@@ -164,93 +164,141 @@ Public Class tisch
     End Function
 
     ''' <summary>
-    ''' publikacja danych do PLC, w zaleznosci od przycisku, wyslij odpowiednie dane, modyfikacja zmiennej w PLC. 
+    ''' Zaczyna polaczenie z PLC. 
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub Przewod1_Down(sender As Object, e As EventArgs) Handles Button8.MouseDown
+    Private Sub Button_ClickUp(sender As Object, e As EventArgs) Handles Button8.MouseUp, Button9.MouseUp, Button10.MouseUp, Button11.MouseUp, Button12.MouseUp
         Try
-            tcClient.WriteAny(Y38, True)
-            Button8.BackColor = Color.Green
-        Catch err As Exception
-            MessageBox.Show(err.Message)
-        End Try
-    End Sub
-    Private Sub Przewod1_UP(sender As Object, e As EventArgs) Handles Button8.MouseUp
-        Try
-            tcClient.WriteAny(Y38, False)
-            Button8.BackColor = Color.White
-        Catch err As Exception
-            MessageBox.Show(err.Message)
-        End Try
-    End Sub
-
-    Private Sub Przewod2_Down(sender As Object, e As EventArgs) Handles Button9.MouseDown
-        Try
-            tcClient.WriteAny(X32, True)
-            Button9.BackColor = Color.Green
-        Catch err As Exception
-            MessageBox.Show(err.Message)
-        End Try
-    End Sub
-    Private Sub Przewod2_UP(sender As Object, e As EventArgs) Handles Button9.MouseUp
-        Try
-            tcClient.WriteAny(X32, False)
-            Button9.BackColor = Color.White
-        Catch err As Exception
-            MessageBox.Show(err.Message)
+            Dim var As Integer
+            If sender.Equals(Button8) Then
+                var = Y38
+            ElseIf sender.Equals(Button9) Then
+                var = X32
+            ElseIf sender.Equals(Button10) Then
+                var = X31_1
+            ElseIf sender.Equals(Button11) Then
+                var = X32_1
+            ElseIf sender.Equals(Button12) Then
+                var = X31_1a
+            End If
+            tcClient.WriteAny(var, False)
+            sender.BackColor = Color.Black
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
         End Try
     End Sub
 
-    Private Sub Przewod3_Down(sender As Object, e As EventArgs) Handles Button10.MouseDown
+    ''' <summary>
+    ''' Konczy polaczenie z PLC. 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub Button_ClickDwon(sender As Object, e As EventArgs) Handles Button8.MouseDown, Button9.MouseDown, Button10.MouseDown, Button11.MouseDown, Button12.MouseDown
         Try
-            tcClient.WriteAny(X31_1, True)
-            Button10.BackColor = Color.Green
-        Catch err As Exception
-            MessageBox.Show(err.Message)
-        End Try
-    End Sub
-    Private Sub Przewod3_UP(sender As Object, e As EventArgs) Handles Button10.MouseUp
-        Try
-            tcClient.WriteAny(X31_1, False)
-            Button10.BackColor = Color.White
-        Catch err As Exception
-            MessageBox.Show(err.Message)
-        End Try
-    End Sub
-
-    Private Sub Przewod4_Down(sender As Object, e As EventArgs) Handles Button11.MouseDown
-        Try
-            tcClient.WriteAny(X32_1, True)
-            Button11.BackColor = Color.Green
-        Catch err As Exception
-            MessageBox.Show(err.Message)
-        End Try
-    End Sub
-    Private Sub Przewod4_UP(sender As Object, e As EventArgs) Handles Button11.MouseUp
-        Try
-            tcClient.WriteAny(X32_1, False)
-            Button11.BackColor = Color.White
-        Catch err As Exception
-            MessageBox.Show(err.Message)
+            Dim var As Integer
+            If sender.Equals(Button8) Then
+                var = Y38
+            ElseIf sender.Equals(Button9) Then
+                var = X32
+            ElseIf sender.Equals(Button10) Then
+                var = X31_1
+            ElseIf sender.Equals(Button11) Then
+                var = X32_1
+            ElseIf sender.Equals(Button12) Then
+                var = X31_1a
+            End If
+            tcClient.WriteAny(var, True)
+            sender.BackColor = Color.Green
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
         End Try
     End Sub
 
-    Private Sub Przewod5_Down(sender As Object, e As EventArgs) Handles Button12.MouseDown
-        Try
-            tcClient.WriteAny(X31_1a, True)
-            Button12.BackColor = Color.Green
-        Catch err As Exception
-            MessageBox.Show(err.Message)
-        End Try
-    End Sub
-    Private Sub Przewod5_UP(sender As Object, e As EventArgs) Handles Button12.MouseUp
-        Try
-            tcClient.WriteAny(X31_1a, False)
-            Button12.BackColor = Color.White
-        Catch err As Exception
-            MessageBox.Show(err.Message)
-        End Try
-    End Sub
+    ''' 
+    'Private Sub Przewod1_Down(sender As Object, e As EventArgs) Handles Button8.MouseDown
+    '    Try
+    '        tcClient.WriteAny(Y38, True)
+    '        Button8.BackColor = Color.Green
+    '    Catch err As Exception
+    '        MessageBox.Show(err.Message)
+    '    End Try
+    'End Sub
+    'Private Sub Przewod1_UP(sender As Object, e As EventArgs) Handles Button8.MouseUp
+    '    Try
+    '        tcClient.WriteAny(Y38, False)
+    '        Button8.BackColor = Color.White
+    '    Catch err As Exception
+    '        MessageBox.Show(err.Message)
+    '    End Try
+    'End Sub
+
+    'Private Sub Przewod2_Down(sender As Object, e As EventArgs) Handles Button9.MouseDown
+    '    Try
+    '        tcClient.WriteAny(X32, True)
+    '        Button9.BackColor = Color.Green
+    '    Catch err As Exception
+    '        MessageBox.Show(err.Message)
+    '    End Try
+    'End Sub
+    'Private Sub Przewod2_UP(sender As Object, e As EventArgs) Handles Button9.MouseUp
+    '    Try
+    '        tcClient.WriteAny(X32, False)
+    '        Button9.BackColor = Color.White
+    '    Catch err As Exception
+    '        MessageBox.Show(err.Message)
+    '    End Try
+    'End Sub
+
+    'Private Sub Przewod3_Down(sender As Object, e As EventArgs) Handles Button10.MouseDown
+    '    Try
+    '        tcClient.WriteAny(X31_1, True)
+    '        Button10.BackColor = Color.Green
+    '    Catch err As Exception
+    '        MessageBox.Show(err.Message)
+    '    End Try
+    'End Sub
+    'Private Sub Przewod3_UP(sender As Object, e As EventArgs) Handles Button10.MouseUp
+    '    Try
+    '        tcClient.WriteAny(X31_1, False)
+    '        Button10.BackColor = Color.White
+    '    Catch err As Exception
+    '        MessageBox.Show(err.Message)
+    '    End Try
+    'End Sub
+
+    'Private Sub Przewod4_Down(sender As Object, e As EventArgs) Handles Button11.MouseDown
+    '    Try
+    '        tcClient.WriteAny(X32_1, True)
+    '        Button11.BackColor = Color.Green
+    '    Catch err As Exception
+    '        MessageBox.Show(err.Message)
+    '    End Try
+    'End Sub
+    'Private Sub Przewod4_UP(sender As Object, e As EventArgs) Handles Button11.MouseUp
+    '    Try
+    '        tcClient.WriteAny(X32_1, False)
+    '        Button11.BackColor = Color.White
+    '    Catch err As Exception
+    '        MessageBox.Show(err.Message)
+    '    End Try
+    'End Sub
+
+    'Private Sub Przewod5_Down(sender As Object, e As EventArgs) Handles Button12.MouseDown
+    '    Try
+    '        tcClient.WriteAny(X31_1a, True)
+    '        Button12.BackColor = Color.Green
+    '    Catch err As Exception
+    '        MessageBox.Show(err.Message)
+    '    End Try
+    'End Sub
+    'Private Sub Przewod5_UP(sender As Object, e As EventArgs) Handles Button12.MouseUp
+    '    Try
+    '        tcClient.WriteAny(X31_1a, False)
+    '        Button12.BackColor = Color.White
+    '    Catch err As Exception
+    '        MessageBox.Show(err.Message)
+    '    End Try
+    'End Sub
 
 End Class

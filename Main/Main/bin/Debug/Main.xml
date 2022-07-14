@@ -116,9 +116,16 @@ Main
  <param name="mtb"></param>
  <returns></returns>
 </member>
-<member name="M:Main.tisch.Przewod1_Down(System.Object,System.EventArgs)">
+<member name="M:Main.tisch.Button_ClickUp(System.Object,System.EventArgs)">
  <summary>
- publikacja danych do PLC, w zaleznosci od przycisku, wyslij odpowiednie dane, modyfikacja zmiennej w PLC. 
+ Zaczyna polaczenie z PLC. 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Main.tisch.Button_ClickDwon(System.Object,System.EventArgs)">
+ <summary>
+ Konczy polaczenie z PLC. 
  </summary>
  <param name="sender"></param>
  <param name="e"></param>
