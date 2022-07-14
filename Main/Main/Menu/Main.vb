@@ -5,7 +5,6 @@ Imports System.Deployment.Application
 ''' <summary>
 ''' Okno glownego menu
 ''' </summary>
-Public Class Agregaty_Me
 Public Class Main
 
     Public poziomdostepu As Boolean     'uzywane w Novimat

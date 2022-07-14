@@ -68,10 +68,38 @@ Main
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="M:Main.Dane_Edycja.Button2_Click(System.Object,System.EventArgs)">
+ <summary>
+ Zapisuje dane do skoroszytu Excel
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Main.Dane_Edycja.Button1_Click(System.Object,System.EventArgs)">
+ <summary>
+ Wczytuje dane z Excel
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Main.Dane_Edycja.releaseObject(System.Object)">
+ <summary>
+ Zakoncz polaczenie
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
 <member name="T:Main.Agregaty_Menu">
  <summary>
  Wybierz kategorie, zalezne od menu glownego
  </summary>
+</member>
+<member name="M:Main.tisch.Przewody_8_Load(System.Object,System.EventArgs)">
+ <summary>
+ Placz sie z PLC (przycisk dziala jak SR)
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
 </member>
 <member name="M:Main.tisch.OnNotification(System.Object,TwinCAT.Ads.AdsNotificationEventArgs)">
  <summary>
@@ -95,6 +123,20 @@ Main
  <param name="sender"></param>
  <param name="e"></param>
 </member>
+<member name="M:Main.Przewody_10749697.Przewody_7_Load(System.Object,System.EventArgs)">
+ <summary>
+ Placz sie z PLC (przycisk dziala jak SR)
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Main.Przewody_10749697.checkVariable(System.String,System.Windows.Forms.MaskedTextBox)">
+ <summary>
+ Obsluga zdarzenia wywolane przez wykonanie polaczenia z PLC. ( wizualne potwierdzenie rozpoczecia procesu )
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
 <member name="T:Main.KFA_Main">
  <summary>
  nowe okno zalezne od glownego menu
@@ -103,6 +145,25 @@ Main
 <member name="M:Main.KFA_Main.Button3_Click(System.Object,System.EventArgs)">
  <summary>
   Wybierz kategorie
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="T:Main.Main">
+ <summary>
+ Okno glownego menu
+ </summary>
+</member>
+<member name="M:Main.Main.Main_Load(System.Object,System.EventArgs)">
+ <summary>
+Pokaz dostepne opcje w polu wyboru
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Main.Main.Button_Click(System.Object,System.EventArgs)">
+ <summary>
+Przyciski aktywacji kolejnych oken
  </summary>
  <param name="sender"></param>
  <param name="e"></param>

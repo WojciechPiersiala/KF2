@@ -306,7 +306,7 @@ Partial Class Main
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(-37, 405)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 47)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(611, 368)
         Me.PictureBox1.TabIndex = 99
@@ -360,10 +360,10 @@ Partial Class Main
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.ClientSize = New System.Drawing.Size(611, 415)
-        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Log_Out)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Log_In)
+        Me.Controls.Add(Me.Log_Out)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button10)

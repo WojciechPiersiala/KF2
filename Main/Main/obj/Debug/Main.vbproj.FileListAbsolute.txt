@@ -131,3 +131,47 @@ C:\Users\kasprzak\Desktop\Wizualizacja\Stanowisko_KFA (kopia2 edit)\Main\Main\ob
 C:\Users\kasprzak\Desktop\Wizualizacja\Stanowisko_KFA (kopia2 edit)\Main\Main\obj\Debug\Main.exe
 C:\Users\kasprzak\Desktop\Wizualizacja\Stanowisko_KFA (kopia2 edit)\Main\Main\obj\Debug\Main.xml
 C:\Users\kasprzak\Desktop\Wizualizacja\Stanowisko_KFA (kopia2 edit)\Main\Main\obj\Debug\Main.pdb
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.vbproj.AssemblyReference.cache
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Interop.Microsoft.Office.Core.dll
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Interop.MSDAOSP.dll
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.vbproj.ResolveComReference.cache
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Dane_Edycja.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Agregaty_Menu.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Frez_08055.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Frez_08379.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.KappenPneumatycznyMaly.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Krokowe_M41.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Novimat.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Novimat_Menu.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Przewody_10749698.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.tisch.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Przewody_10749699.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Przewody_10749697.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.KFA_Main.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Krokowe_M31.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Resource1.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Resources.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.KFA_Czujniki.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Raport.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.OknoStart.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Serwo.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.vbproj.GenerateResource.cache
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.vbproj.CoreCompileInputs.cache
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.exe
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.xml
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.pdb
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.Main.resources
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\bin\Debug\Main.exe.config
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\bin\Debug\Main.exe.manifest
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\bin\Debug\Main.application
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\bin\Debug\Main.exe
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\bin\Debug\Main.pdb
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\bin\Debug\Main.xml
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\bin\Debug\CircularProgressBar.dll
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\bin\Debug\WinFormAnimation.dll
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\bin\Debug\CircularProgressBar.xml
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\bin\Debug\WinFormAnimation.xml
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.TrustInfo.xml
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.exe.manifest
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.application
+C:\Users\kasprzak\Desktop\Wizualizacja\KF2\Main\Main\obj\Debug\Main.vbproj.CopyComplete
