@@ -14,7 +14,7 @@ Public Class Przewody_10749697
     Private hConnect() As Integer                           'uchwyt obslugi polaczenia
     Private dataStream As AdsStream                         'udestepnia dostep do podstawowego strumienia BinaryReader 
     Private binRead As BinaryReader                         'odczytuje zarówno podstawowe typy danych, jak i typy danych PLC jako wartości binarne.
-    Private bIsReading As Boolean = False 'flaga procesu
+    Private bIsReading As Boolean = False                   'flaga procesu
     Private bHasRead As Boolean = False                     'powiadomienie o ukonczeniu pobierania
     Private iMaxValues As Integer = 25
     Private aPicBoxes(0 To iMaxValues) As PictureBox        'ikonki
